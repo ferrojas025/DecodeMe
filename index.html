@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto</title>
-    <link rel="stylesheet" href="style.css"> <!-- Si planeas agregar un archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Encriptador de Texto</h1>
-    <textarea id="input-text" placeholder="Ingrese el texto aqui"></textarea>
-    <button id="encrypt-button">Encriptar</button>
-    <button id="decrypt-button">Desencriptar</button>
-    <textarea id="output-text" placeholder="El resultado aparecerá aquí"></textarea>
+    <!-- Primera sección: Entrada de texto -->
+    <div id="input-section" class="container">
+        <div class="left-panel">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <textarea id="inputText" placeholder="Ingrese el texto aquí..."></textarea>
+            <div class="controls">
+                <p>🔒 Sólo letras minúsculas y sin acentos</p>
+                <button class="encrypt-button" onclick="encrypt()">Encriptar</button>
+                <button class="decrypt-button" onclick="decrypt()">Desencriptar</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="images/no-message.png" alt="Ningún mensaje encontrado" class="no-message">
+            <p>Ningún mensaje fue encontrado</p>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </div>
+
+    <!-- Segunda sección: Resultado -->
+    <div id="output-section" class="container" style="display: none;">
+        <div class="left-panel">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <p id="resultText">Texto encriptado/desencriptado aparecerá aquí...</p>
+            <div class="controls">
+                <p>🔒 Apenas letras minúsculas y sin acentos</p>
+                <button class="encrypt-button" onclick="goBack()">Volver</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <p id="resultTextRight">Texto encriptado/desencriptado aparecerá aquí...</p>
+            <button class="copy-button" onclick="copyToClipboard()">Copiar</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
